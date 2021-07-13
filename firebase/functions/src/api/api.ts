@@ -12,8 +12,26 @@ api
     console.log(req.url);
     next();
   })
+  .use(async (req, res, next) => {
+    const bearerToken = req.headers.authorization;
+    if (!bearerToken) {
+      res.sendStatus(401);
+      return;
+    }
+
+    try {
+      const idToken = bearerToken.split(' ')[1];
+      const decodedToken = await firebaseApp.auth().verifyIdToken(idToken);
+      req.userUid = decodedToken.uid;
+      next();
+    }
+    catch (error) {
+      console.error(error);
+      res.sendStatus(401);
+    }
+  })
   .get('/getTransactionsTotalForUser', async (req, res) => {
-    const userUid = req.query.userUid;
+    const userUid = req.userUid;
 
     try {
       const queryResult = await firebaseApp.firestore()
