@@ -1,7 +1,21 @@
 <mat-nav-list>
-  <mat-list-item>
-    <span>Signed in as Guest</span>
-    <mat-divider></mat-divider>
-  </mat-list-item>
-  <mat-list-item>Login</mat-list-item>
+  <ng-container *ngIf="user$ | async as user; else guestUser">
+    <mat-list-item>
+      <img matListAvatar [src]="user.photoURL" />
+      <span class="username">{{user.email}}</span>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+    <mat-list-item (click)="logout()">
+      <span>Logout</span>
+    </mat-list-item>
+  </ng-container>
+  <ng-template #guestUser>
+    <mat-list-item>
+      <span>Signed in as Guest</span>
+      <mat-divider></mat-divider>
+    </mat-list-item>
+    <mat-list-item (click)="login()">
+      <span>Login</span>
+    </mat-list-item>
+  </ng-template>
 </mat-nav-list>
