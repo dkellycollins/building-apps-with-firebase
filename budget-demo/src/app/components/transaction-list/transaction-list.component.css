@@ -23,3 +23,7 @@
   right: 0;
   margin: 16px;
 }
+
+.toolbar-filler {
+  flex: 1 1 auto;
+}

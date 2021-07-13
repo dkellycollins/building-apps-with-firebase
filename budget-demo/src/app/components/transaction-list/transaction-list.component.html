@@ -1,6 +1,7 @@
 <div class="container">
   <mat-toolbar>
-    <span>Transactions</span>
+    <span class="toolbar-filler">Transactions</span>
+    <span>{{ transactionsTotal$ | async | currency }}</span>
   </mat-toolbar>
   <mat-action-list>
     <ng-container *ngFor="let transaction of transactions$ | async">

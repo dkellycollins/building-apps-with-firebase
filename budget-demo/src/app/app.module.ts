@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -47,6 +48,7 @@ import { TransactionNewComponent } from './components/transaction-new/transactio
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     MaterialFileInputModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

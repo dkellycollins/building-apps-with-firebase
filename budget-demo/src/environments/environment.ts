@@ -11,6 +11,9 @@ export const environment = {
     storageBucket: "budget-demo-45094.appspot.com",
     messagingSenderId: "990191621645",
     appId: "1:990191621645:web:5cc5d5a70b98ed673b2744"
+  },
+  functions: {
+    api: 'https://us-central1-budget-demo-45094.cloudfunctions.net/api'
   }
 };
 
