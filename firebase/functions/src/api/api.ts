@@ -1,10 +1,8 @@
 import * as express from 'express';
 import * as cors from 'cors';
-import * as admin from 'firebase-admin';
+import { firebaseApp } from '../shared/firebaseApp';
 
 export const api = express();
-
-const firebaseApp = admin.initializeApp();
 
 api
   .use(cors())
