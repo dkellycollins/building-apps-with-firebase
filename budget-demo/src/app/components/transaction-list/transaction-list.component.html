@@ -2,15 +2,15 @@
   <mat-toolbar>
     <span>Transactions</span>
   </mat-toolbar>
-  <mat-list>
+  <mat-action-list>
     <ng-container *ngFor="let transaction of transactions$ | async">
-      <mat-list-item class="transaction-container">
+      <mat-list-item class="transaction-container" (click)="showTransaction(transaction)">
         <h3 matLine>{{transaction.category}}</h3>
         <p matLine>{{transaction.date | date}}</p>
         <span class="transaction-amount">{{transaction.amount | currency}}</span>
       </mat-list-item>
     </ng-container>
-  </mat-list>
+  </mat-action-list>
   <div class="primary-action-container">
     <button mat-fab (click)="createTransaction()">
       <mat-icon>add</mat-icon>

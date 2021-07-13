@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs';
 import { TransactionModel } from '../../models/transaction.model';
 import { FirestoreTransactionService } from '../../services/firestore-transaction.service';
+import { TransactionImageComponent } from '../transaction-image/transaction-image.component';
 import { TransactionNewComponent } from '../transaction-new/transaction-new.component';
 
 @Component({
@@ -25,6 +26,12 @@ export class TransactionListComponent implements OnInit {
 
   public createTransaction(): void {
     this.dialog.open(TransactionNewComponent);
+  }
+
+  public showTransaction(transaction: TransactionModel): void {
+    this.dialog.open(TransactionImageComponent, {
+      data: { transactionId: transaction.id }
+    });
   }
 
 }

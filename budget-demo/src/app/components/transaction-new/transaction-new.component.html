@@ -16,6 +16,10 @@
       <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
       <mat-datepicker #datePicker></mat-datepicker>
     </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image</mat-label>
+      <ngx-mat-file-input formControlName="image"></ngx-mat-file-input>
+    </mat-form-field>
   </form>
 </div>
 <div mat-dialog-actions>
