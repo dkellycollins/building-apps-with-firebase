@@ -12,6 +12,15 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "predeploy": [
+      "cd ../budget-demo && npm run build --prod"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
     ]
   },
   "emulators": {
