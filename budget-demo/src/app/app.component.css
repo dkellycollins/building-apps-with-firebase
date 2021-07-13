@@ -1,0 +1,7 @@
+.sidenav-container {
+  min-width: 300px;
+}
+
+.content-container {
+  height: calc(100% - 64px);
+}

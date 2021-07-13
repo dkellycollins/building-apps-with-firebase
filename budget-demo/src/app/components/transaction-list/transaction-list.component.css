@@ -1,0 +1,25 @@
+.container {
+  position: relative;
+  min-height: 100%;
+}
+
+.transaction-container {
+  position: relative;
+}
+
+.transaction-description {
+  display: inline-block;
+  padding-right: 20%;
+}
+
+.transaction-amount {
+  float: left;
+  font-weight: 500;
+}
+
+.primary-action-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 16px;
+}

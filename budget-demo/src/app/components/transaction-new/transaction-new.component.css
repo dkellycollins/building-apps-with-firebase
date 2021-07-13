@@ -1,0 +1,10 @@
+.error-message {
+  color: red;
+  padding-bottom: 16px;
+  text-align: center;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}

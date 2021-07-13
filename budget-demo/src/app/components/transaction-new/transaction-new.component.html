@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Add Transaction</h1>
+<div mat-dialog-content>
+  <div *ngIf="hasError" class="error-message">Unable to add transaction.</div>
+  <form class="form-container" [formGroup]="form" (ngSubmit)="submit(form.value)">
+    <mat-form-field>
+      <mat-label>Category</mat-label>
+      <input matInput formControlName="category" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Amount</mat-label>
+      <input matInput type="number" formControlName="amount" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="datePicker" formControlName="date" />
+      <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+      <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="cancel()">Cancel</button>
+  <button mat-button (click)="submit(form.value)">Add</button>
+</div>
