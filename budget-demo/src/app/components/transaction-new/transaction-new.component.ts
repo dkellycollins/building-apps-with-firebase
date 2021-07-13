@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { LocalStorageTransactionService } from '../../services/local-storage-transaction.service';
+import { FirestoreTransactionService } from '../../services/firestore-transaction.service';
 
 @Component({
   selector: 'app-transaction-new',
@@ -14,7 +14,7 @@ export class TransactionNewComponent implements OnInit {
   public form!: FormGroup;
 
   constructor(
-    private readonly transactionService: LocalStorageTransactionService,
+    private readonly transactionService: FirestoreTransactionService,
     private readonly dialog: MatDialogRef<TransactionNewComponent>,
     private readonly formBuilder: FormBuilder
   ) { }
